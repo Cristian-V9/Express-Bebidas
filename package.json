@@ -1,14 +1,15 @@
 {
-  "name": "pruebaexpress",
+  "name": "express-bebidas",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Cristian Vargas",
   "license": "ISC",
-  "description": "",
+  "description": "API y aplicacion web en Express para consultar un catalogo de bebidas",
   "dependencies": {
     "express": "^5.2.1"
   }
