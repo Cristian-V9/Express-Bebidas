@@ -1,30 +1,32 @@
-# Bebidas-Express
+[English](README.md) | [Español](README.es.md)
 
-Aplicacion web y API construida con Express (Node.js) para consultar un catalogo de bebidas.
-Proyecto academico para UCompensar.
+# Express-Bebidas
 
-## Funcionalidades
+Web application and API built with Express (Node.js) to consult a beverage catalog.
+Academic project for UCompensar.
 
-- API REST con endpoints en formato JSON
-- Buscador visual (HTML/CSS) para consultar un producto por ID
-- Pagina de detalle de producto con tabla de informacion
-- Manejo de errores 400 (solicitud incorrecta) y 404 (producto no encontrado) con paginas HTML personalizadas
+## Features
 
-## Endpoints de la API
+- REST API with JSON-formatted endpoints
+- Visual search form (HTML/CSS) to look up a product by ID
+- Product detail page with an information table
+- Custom HTML error pages for 400 (bad request) and 404 (product not found)
 
-- `GET /api/v1/status` - Estado del servidor
-- `GET /api/v1/productos` - Lista completa de productos en formato JSON
+## API Endpoints
 
-## Rutas web
+- `GET /api/v1/status` - Server status
+- `GET /api/v1/productos` - Full product list in JSON format
 
-- `/` - Buscador de bebidas
-- `/producto?id=X` - Detalle de un producto especifico
+## Web Routes
 
-## Instalacion
+- `/` - Beverage search form
+- `/producto?id=X` - Detail page for a specific product
 
-\`\`\`bash
+## Installation
+
+```bash
 npm install
-node index.js
-\`\`\`
+npm start
+```
 
-El servidor corre por defecto en `http://localhost:3000`
+The server runs by default at `http://localhost:3000`
