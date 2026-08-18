@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>UCompensar - Buscador de Bebidas</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Buscador de Bebidas UCompensar</h1>
+    <p>Escribe el ID del producto que deseas consultar</p>
+
+    <form action="/producto" method="GET" class="formulario-busqueda">
+      <input
+        type="text"
+        name="id"
+        id="id"
+        placeholder="Ej: 1, 2, 3..."
+        required
+      >
+      <button type="submit">Buscar</button>
+    </form>
+
+    <p class="ayuda">IDs disponibles: del 1 al 15</p>
+  </div>
+</body>
+</html>

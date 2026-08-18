@@ -1,0 +1,136 @@
+:root {
+  --naranja: #ff5f00;
+  --naranja-oscuro: #e05206;
+  --naranja-suave: #fff2e8;
+  --fondo: #ffffff;
+  --caja: #fcfcfd;
+  --borde: #e5e5ea;
+  --texto: #1d1d21;
+  --texto-suave: #6a6a73;
+  --radio: 12px;
+  --sombra: 0 1px 2px rgba(25, 20, 15, .06), 0 10px 28px rgba(25, 20, 15, .08);
+  --fuente: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 56px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.contenedor {
+  width: 100%;
+  background: var(--caja);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(255, 95, 0, .45);
+  outline-offset: 2px;
+}
+
+.contenedor {
+  max-width: 520px;
+  padding: 44px 40px 40px;
+  text-align: center;
+  border-top: 4px solid var(--naranja);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 16px auto 0;
+  border-radius: 999px;
+  background: var(--naranja);
+}
+
+h1 + p {
+  margin: 18px auto 0;
+  max-width: 34ch;
+  color: var(--texto-suave);
+}
+
+.formulario-busqueda {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.formulario-busqueda input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 16px;
+  font: inherit;
+  color: var(--texto);
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.formulario-busqueda input::placeholder { color: #a6a6ae; }
+
+.formulario-busqueda input:hover { border-color: #d3d3da; }
+
+.formulario-busqueda input:focus {
+  outline: none;
+  border-color: var(--naranja);
+  box-shadow: 0 0 0 3px rgba(255, 95, 0, .18);
+}
+
+.formulario-busqueda input:invalid:not(:placeholder-shown) {
+  border-color: #d8663f;
+}
+
+.formulario-busqueda button {
+  flex: none;
+  padding: 13px 26px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--naranja);
+  border: 1px solid var(--naranja);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color .15s ease, transform .05s ease, box-shadow .15s ease;
+}
+
+.formulario-busqueda button:hover {
+  background: var(--naranja-oscuro);
+  border-color: var(--naranja-oscuro);
+}
+
+.formulario-busqueda button:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, .18);
+}
+
+.ayuda {
+  margin: 22px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--borde);
+  font-size: .875rem;
+  color: var(--texto-suave);
+}
