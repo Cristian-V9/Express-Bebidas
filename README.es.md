@@ -1,32 +1,75 @@
 [English](README.md) | [Español](README.es.md)
 
-# Express-Bebidas
+# RetoBackEndJRR
 
-Aplicacion web y API construida con Express (Node.js) para consultar un catalogo de bebidas.
-Proyecto academico para UCompensar.
+Simulador de tarifas y liquidación construido con Spring Boot (Java) que calcula el total a pagar a partir de las horas trabajadas y una tarifa base.
+Proyecto académico grupal.
 
 ## Funcionalidades
 
-- API REST con endpoints en formato JSON
-- Buscador visual (HTML/CSS) para consultar un producto por ID
-- Pagina de detalle de producto con tabla de informacion
-- Manejo de errores 400 (solicitud incorrecta) y 404 (producto no encontrado) con paginas HTML personalizadas
+- Cálculo de liquidación según horas trabajadas y tarifa base por hora
+- Recargo institucional del 15% aplicado al total
+- La simulación se ejecuta automáticamente al iniciar y muestra el resultado por consola
+- Estructura en capas: servicio (lógica de negocio) y componente (ejecutor)
 
-## Endpoints de la API
+## Cómo funciona
 
-- `GET /api/v1/status` - Estado del servidor
-- `GET /api/v1/productos` - Lista completa de productos en formato JSON
+`LiquidacionService.calcularTarifa(horas, tarifaBase)` devuelve:
 
-## Rutas web
-
-- `/` - Buscador de bebidas
-- `/producto?id=X` - Detalle de un producto especifico
-
-## Instalacion
-
-```bash
-npm install
-npm start
+```
+total = horas × tarifaBase × 1.15
 ```
 
-El servidor corre por defecto en `http://localhost:3000`
+Ejemplo de salida (40 horas a $30.000 por hora):
+
+```
+==================================================
+   RETO: SIMULADOR DE TARIFAS Y LIQUIDACIÓN
+==================================================
+>> Horas Registradas: 40.0
+>> Tarifa Base por Hora: $30000.0
+>> TOTAL LIQUIDACIÓN INSTITUCIONAL: $1380000.0
+==================================================
+```
+
+## Estructura del proyecto
+
+```
+src/main/java/com/example/retobackendjrr/
+├── RetoBackEndJrrApplication.java    # Clase principal
+├── component/SimuladorRunner.java    # Ejecuta la simulación al iniciar
+└── service/LiquidacionService.java   # Lógica de cálculo
+```
+
+## Tecnologías
+
+- Java 17
+- Spring Boot 4.1.1
+- Maven (incluye Maven Wrapper)
+
+## Instalación
+
+Requiere JDK 17 o superior. No hace falta instalar Maven, el wrapper viene incluido.
+
+```bash
+git clone https://github.com/TU_USUARIO/RetoBackEndJRR.git
+cd RetoBackEndJRR
+```
+
+Linux / macOS:
+
+```bash
+./mvnw spring-boot:run
+```
+
+Windows:
+
+```bash
+mvnw.cmd spring-boot:run
+```
+
+Para ejecutar las pruebas:
+
+```bash
+./mvnw test
+```
